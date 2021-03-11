@@ -1,1 +1,11 @@
-<p>email-box works!</p>
+<ul class="list-group email-box">
+  <li
+    *ngFor="let cat of categories"
+    routerLink="{{ cat.value }}"
+    (click)="showCategory(cat)"
+    [class.active]="selectedCategory === cat.value"
+    class="list-group-item flex-grow-1"
+  >
+    {{ cat.name }}
+  </li>
+</ul>

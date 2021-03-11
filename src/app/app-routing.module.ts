@@ -8,6 +8,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'messages',
+    pathMatch: 'full'
+  },
+  {
+    path: 'messages',
     redirectTo: 'messages/inbox',
     pathMatch: 'full'
   },

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EmailService } from '../services/email.service';
 
 @Component({
   selector: 'app-email-preview',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailPreviewComponent implements OnInit {
 
-  constructor() { }
+  emails = [];
+
+  constructor(private route: ActivatedRoute, private http: EmailService) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(p => {
+      console.log(p);
+      let cat = p.id;
+      this.emails = this.http.getEmails(cat);
+      console.log(this.emails);
+      
+    })
   }
 
 }

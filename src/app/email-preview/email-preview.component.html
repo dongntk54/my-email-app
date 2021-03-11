@@ -1,1 +1,18 @@
-<p>email-preview works!</p>
+<div class="email-preview-container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Sender</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let email of emails">
+        <td class="pl-4">{{ email.from }}</td>
+        <td>{{ email.subject | summary: 50 }}</td>
+        <td>{{ email.date | date: "dd-MM-yyyy" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
