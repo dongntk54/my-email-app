@@ -1,11 +1,26 @@
 <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="messages">Messages</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="contacts">Contacts</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLinkActive="active" routerLink="preference">Preferences</a>
-    </li>
-  </ul>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLinkActive="active"
+      [routerLink]="[{ outlets: { primary: 'messages', detail: null } }]"
+      >Messages</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLinkActive="active"
+      [routerLink]="[{ outlets: { primary: 'contacts', detail: null } }]"
+      >Contacts</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      routerLinkActive="active"
+      [routerLink]="[{ outlets: { primary: 'preferences', detail: null } }]"
+      >Preferences</a
+    >
+  </li>
+</ul>

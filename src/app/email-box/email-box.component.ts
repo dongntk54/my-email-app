@@ -44,6 +44,6 @@ export class EmailBoxComponent implements OnInit {
 
   showCategory(cat): void {
     this.selectedCategory = cat.value;
-    this.router.navigate(['messages/' + cat.value]);
+    this.router.navigateByUrl('messages/' + cat.value);
   }
 }

@@ -10,4 +10,8 @@ export class EmailService {
   getEmails(cat) {
     return mockData.filter((e) => e.folder === cat);
   }
+
+  getEmailById(id) {
+    return mockData.filter((e) => e._id === id);
+  }
 }

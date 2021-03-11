@@ -3,3 +3,14 @@
   max-height: 45vh;
   overflow: auto;
 }
+
+.active {
+  background-color: #ff8f00;
+  color: #fff;
+}
+
+.email-item:hover {
+  background-color: #ff8f00;
+  color: #fff;
+  cursor: pointer;
+}
