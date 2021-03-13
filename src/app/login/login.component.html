@@ -1,1 +1,15 @@
-<p>login works!</p>
+<form class="w-50 rounded p-4 mx-auto mt-5 shadow-lg">
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" />
+  </div>
+  <div class="d-flex align-items-center mb-2">
+    <span class="mr-1"> Not have account yet? </span>
+    <a routerLink="/signup" class="btn btn-link p-0">Signup</a>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+</form>

@@ -14,6 +14,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SummaryPipe } from './summary.pipe';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     SignupComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
