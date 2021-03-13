@@ -1,16 +1,28 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 import { EmailDetailComponent } from './email-detail/email-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { MessagesComponent } from './messages/messages.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'messages',
+    redirectTo: 'messages/inbox',
     pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: 'messages',
@@ -20,18 +32,22 @@ const routes: Routes = [
   {
     path: 'messages/:id',
     component: MessagesComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'contacts',
     component: ContactsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'preferences',
     component: PreferencesComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: ':id',
     component: EmailDetailComponent,
+    canActivate: [AuthGuard],
     outlet: 'detail',
   },
   {
